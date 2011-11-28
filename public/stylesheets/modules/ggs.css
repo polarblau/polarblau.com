@@ -141,9 +141,6 @@ body {
  **  Margin   | #  1   2   3   4   |   Margin
  **  5.55555% | %  25  50  75  100 | 5.55555%
  ** */
-header, #twoway {
-  margin: 0 5.556%; }
-
 h1 {
   margin: 0.923em 0 1.385em; }
 
@@ -213,10 +210,7 @@ h3 {
 @media screen and (min-width: 61.5em) {
   body {
     /* Reset baseline grid to 16/16 = 1.0 */
-    font-size: 1em; }
-
-  header, #twoway {
-    margin: 0 16.667%; } }
+    font-size: 1em; } }
 /* @media screen and (min-width: 1200px) */
 @media screen and (min-width: 75em) {
   body {
@@ -226,10 +220,7 @@ h3 {
 @media screen and (min-width: 87em) {
   body {
     /* Reset baseline grid to 16/16 = 1.0 */
-    font-size: 1em; }
-
-  header, #twoway {
-    margin: 0 27.778%; } }
+    font-size: 1em; } }
 /* @media screen and (min-width: 1680px) */
 @media screen and (min-width: 105em) {
   body {

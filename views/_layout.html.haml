@@ -13,7 +13,8 @@
     
   %body
     #container
-      %header#masthead
+      %header
+        = render "partials/header"
       #main(role="main")
         = yield
-      %footer#footer
+      %footer

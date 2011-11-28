@@ -1,0 +1,132 @@
+// Layout image
+=image($img, $repeat: no-repeat, $x: 50%, $y: 100%, $attach: scroll)
+  background-position: $x $y
+  background-repeat: $repeat
+  background-attachment: $attach
+  background-image: url(/images/layout/#{$img})
+
+=float-right
+  display: inline
+  float: right
+  
+=float-left
+  display: inline
+  float: left
+  
+=border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  -o-box-sizing: border-box
+  box-sizing: border-box
+  
+=list-default
+  margin: 0
+  padding: 0
+  list-style: none
+  
+=link-default
+  text-decoration: none
+
+// Border Radius
+=border-radius($tl: 5px, $tr: $tl, $br: $tl, $bl: $tl)
+  border-top-left-radius: $tl
+  border-top-right-radius: $tr
+  border-bottom-right-radius: $br
+  border-bottom-left-radius: $bl
+  -moz-border-radius-topleft: $tl
+  -moz-border-radius-topright: $tr
+  -moz-border-radius-bottomright: $br
+  -moz-border-radius-bottomleft: $bl
+  -ms-border-radius-topleft: $tl
+  -ms-border-radius-topright: $tr
+  -ms-border-radius-bottomright: $br
+  -ms-border-radius-bottomleft: $bl
+  -o-border-radius-topleft: $tl
+  -o-border-radius-topright: $tr
+  -o-border-radius-bottomright: $br
+  -o-border-radius-bottomleft: $bl
+  -webkit-border-radius-topleft: $tl
+  -webkit-border-radius-topright: $tr
+  -webkit-border-radius-bottomright: $br
+  -webkit-border-radius-bottomleft: $bl
+  -khtml-border-radius-topleft: $tl
+  -khtml-border-radius-topright: $tr
+  -khtml-border-radius-bottomright: $br
+  -khtml-border-radius-bottomleft: $bl
+
+// Box shadow
+=box-shadow($x: 0, $y: 2px, $blur: 2px, $color: transparentize($black, 0.5), $inset: "")
+  box-shadow: #{$inset} $x $y $blur $color
+  -moz-box-shadow: #{$inset} $x $y $blur $color
+  -wms-box-shadow: #{$inset} $x $y $blur $color
+  -o-box-shadow: #{$inset} $x $y $blur $color
+  -webkit-box-shadow: #{$inset} $x $y $blur $color
+  -khtml-box-shadow: #{$inset} $x $y $blur $color
+  filter: "progid:DXImageTransform.Microsoft.dropshadow (OffX=$x, OffY=$y, Color='$color', Positive='true')"
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropShadow(OffX=$x, OffY=$y, Color='$color', Positive='true')"
+
+=box-hover($color: transparentize($black, 0.25))
+  +box-shadow(0, 0, 2px, $color)  
+
+// Text shadow
+=text-shadow($x: 0, $y: 1px, $blur: 0, $color: transparentize($black, 0.5))
+  text-shadow: $x $y $blur $color
+
+=text-inset($color: transparentize($black, 0.25))
+  +text-shadow(0, -1px, 0, $color)
+
+=text-inset-negative($color: transparentize($white, 0.25))
+  +text-shadow(0, 1px, 0, $color)
+
+=text-hover($color: transparentize($black, 0.25))
+  +text-shadow(0, 0, 2px, $color)
+  
+
+// Gradients
+=linear-gradient($from, $to)
+  background: -moz-linear-gradient(0% 100% 90deg, $to, $from) no-repeat
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to)) no-repeat
+  // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to')
+  filter: "progid:DXImageTransform.Microsoft.Gradient (GradientType=0, StartColorStr='$from', EndColorStr='$to')"
+
+// Opacity
+=opacity($opacity)
+  opacity: $opacity
+  filter: alpha(opacity=$opacity * 100)
+
+// Scrollbar
+=custom-scrollbars
+  &::-webkit-scrollbar
+    width: 5px
+    height: 5px
+
+  &::-webkit-scrollbar-button:start:decrement,
+  &::-webkit-scrollbar-button:end:increment
+    height: 0px
+    display: block
+    background-color: transparent
+
+  &::-webkit-scrollbar-track-piece
+    +border-radius(3px)
+    +box-shadow(0, 1px, 1px, transparentize($black, 0.85), "inset")
+
+  &::-webkit-scrollbar-thumb:vertical
+    height: 50px
+    +border-radius(3px)
+
+
+// Clearfix
+=clearfix
+  display: inline-block
+  display: block
+
+  &:after
+    content: "."
+    display: block
+    clear: both
+    visibility: hidden
+    line-height: 0
+    height: 0
+
+.clearfix, .clear
+  +clearfix

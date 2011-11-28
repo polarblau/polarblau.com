@@ -1,3 +1,232 @@
+.clearfix, .clear {
+  display: inline-block;
+  display: block; }
+  .clearfix:after, .clear:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+audio:not([controls]), [hidden] {
+  display: none; }
+
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: sans-serif;
+  color: #222222; }
+
+button, input, select, textarea {
+  font-family: sans-serif;
+  color: #222222; }
+
+::-moz-selection, ::selection {
+  background: #fe57a1;
+  color: white;
+  text-shadow: none; }
+
+a {
+  color: #0000ee; }
+  a:visited {
+    color: #551a8b; }
+  a:hover {
+    color: #0066ee; }
+  a:focus {
+    outline: thin dotted; }
+  a:hover, a:active {
+    outline: 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: bold; }
+
+blockquote {
+  margin: 1em 40px; }
+
+dfn {
+  font-style: italic; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+ins {
+  background: #ffff99;
+  color: black;
+  text-decoration: none; }
+
+mark {
+  background: yellow;
+  color: black;
+  font-style: italic;
+  font-weight: bold; }
+
+pre, code, kbd, samp {
+  font-family: monospace, serif;
+  _font-family: "courier new", monospace;
+  font-size: 1em; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: none; }
+  q:before, q:after {
+    content: "";
+    content: none; }
+
+small {
+  font-size: 85%; }
+
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px; }
+
+dd {
+  margin: 0 0 0 40px; }
+
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0; }
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure, form {
+  margin: 0; }
+
+figure {
+  position: relative; }
+  figure img, figure object, figure embed, figure video {
+    max-width: 100%;
+    display: block; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+label {
+  cursor: pointer; }
+
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0; }
+
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle; }
+
+button, input {
+  line-height: normal; }
+
+button {
+  cursor: pointer;
+  -webkit-appearance: button;
+  *overflow: visible; }
+
+input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  *overflow: visible; }
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+  input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none; }
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical; }
+
+input:invalid, textarea:invalid {
+  background-color: #f0dddd; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td {
+  vertical-align: top; }
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+  .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto; }
+
 /**
  **  Golden Grid System (1.01)	<http://goldengridsystem.com/>
  **  by Joni Korpi 				<http://jonikorpi.com/>
@@ -141,9 +370,6 @@ body {
  **  Margin   | #  1   2   3   4   |   Margin
  **  5.55555% | %  25  50  75  100 | 5.55555%
  ** */
-header, #twoway {
-  margin: 0 5.556%; }
-
 h1 {
   margin: 0.923em 0 1.385em; }
 
@@ -213,10 +439,7 @@ h3 {
 @media screen and (min-width: 61.5em) {
   body {
     /* Reset baseline grid to 16/16 = 1.0 */
-    font-size: 1em; }
-
-  header, #twoway {
-    margin: 0 16.667%; } }
+    font-size: 1em; } }
 /* @media screen and (min-width: 1200px) */
 @media screen and (min-width: 75em) {
   body {
@@ -226,10 +449,7 @@ h3 {
 @media screen and (min-width: 87em) {
   body {
     /* Reset baseline grid to 16/16 = 1.0 */
-    font-size: 1em; }
-
-  header, #twoway {
-    margin: 0 27.778%; } }
+    font-size: 1em; } }
 /* @media screen and (min-width: 1680px) */
 @media screen and (min-width: 105em) {
   body {
@@ -250,6 +470,169 @@ h3 {
   header .wrapper {
     width: 37.5%;
     margin-left: 25%; }
+
+  #twoway .wrapper {
+    width: 25%; }
+    #twoway .wrapper:first-child {
+      margin-left: 25%; } }
+/* @media screen and (min-width: 2080px) */
+@media screen and (min-width: 130em) {
+  body {
+    /* Zoom baseline grid to 18/16 = 1.125 */
+    font-size: 1.125em;
+    max-width: 160em; } }
+body {
+  /* 16px / 24px */
+  font-size: 1em;
+  line-height: 1.5em;
+  background-position: 50% 100%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-image: url(/images/layout/shared/bg.jpg); }
+
+.small {
+  /* 13px / 18px */
+  font-size: 0.813em;
+  line-height: 1.385em; }
+
+.normal, h3 {
+  /* 16px / 24px */
+  font-size: 1em;
+  line-height: 1.5em;
+  /* 24 */ }
+
+.large, h2, h1 {
+  /* 26 / 36px */
+  font-size: 1.625em;
+  line-height: 1.385em; }
+
+.huge {
+  /* 42px / 48px */
+  font-size: 2.625em;
+  line-height: 1.143em; }
+
+.massive {
+  /* 68px / 72px */
+  font-size: 4.25em;
+  line-height: 1.059em; }
+
+.gigantic {
+  /* 110px / 120px */
+  font-size: 6.875em;
+  line-height: 1.091em; }
+
+h1 {
+  margin: 0.923em 0 1.385em; }
+
+h2 {
+  margin: 0.923em 0 1.385em;
+  font-weight: normal; }
+
+h3 {
+  margin: 1.5em 0 1.5em; }
+
+.wrapper {
+  padding: 0 0.75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  background-position: 50% 100%;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-image: url(/images/layout/shared/bg.jpg); }
+
+header {
+  padding: 1em 0;
+  text-align: center;
+  box-shadow:  0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow:  0 1px 2px rgba(0, 0, 0, 0.1);
+  -wms-box-shadow:  0 1px 2px rgba(0, 0, 0, 0.1);
+  -o-box-shadow:  0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow:  0 1px 2px rgba(0, 0, 0, 0.1);
+  -khtml-box-shadow:  0 1px 2px rgba(0, 0, 0, 0.1);
+  filter: "progid:DXImageTransform.Microsoft.dropshadow (OffX=$x, OffY=$y, Color='$color', Positive='true')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropShadow(OffX=$x, OffY=$y, Color='$color', Positive='true')";
+  background: -moz-linear-gradient(0% 100% 90deg, #edeff3, white) no-repeat;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#edeff3)) no-repeat;
+  filter: "progid:DXImageTransform.Microsoft.Gradient (GradientType=0, StartColorStr='$from', EndColorStr='$to')"; }
+  header h1 {
+    margin: 0; }
+
+/**
+ **  Four-column grid active
+ **  ----------------------------------------
+ **  Margin   | #  1   2   3   4   |   Margin
+ **  5.55555% | %  25  50  75  100 | 5.55555%
+ ** */
+/* @media screen and (min-width: 640px) */
+@media screen and (min-width: 40em) {
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+    font-size: 1.063em; }
+
+  h1 {
+    /* 42px / 48px */
+    font-size: 2.625em;
+    line-height: 1.143em;
+    margin: 1.143em 0 0.571em; } }
+/**
+ **  Eight-column grid active
+ **  ----------------------------------------------------------------------
+ **  Margin   | #  1     2     3     4     5     6     7     8   |   Margin
+ **  5.55555% | %  12.5  25.0  37.5  50.0  62.5  75.0  87.5  100 | 5.55555%
+ **	
+ ** */
+/* @media screen and (min-width: 720px) */
+@media screen and (min-width: 45em) {
+  body {
+    /* Reset baseline grid to 16/16 = 1 */
+    font-size: 1em; }
+
+  #folding .wrapper {
+    float: left;
+    width: 50%; }
+
+  header {
+    padding: 3em 0; } }
+/* @media screen and (min-width: 888px) */
+@media screen and (min-width: 55.5em) {
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+    font-size: 1.063em; } }
+/* @media screen and (min-width: 984px) */
+@media screen and (min-width: 61.5em) {
+  body {
+    /* Reset baseline grid to 16/16 = 1.0 */
+    font-size: 1em; } }
+/* @media screen and (min-width: 1200px) */
+@media screen and (min-width: 75em) {
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+    font-size: 1.063em; } }
+/* @media screen and (min-width: 1392px) */
+@media screen and (min-width: 87em) {
+  body {
+    /* Reset baseline grid to 16/16 = 1.0 */
+    font-size: 1em; } }
+/* @media screen and (min-width: 1680px) */
+@media screen and (min-width: 105em) {
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+    font-size: 1.063em; } }
+/**
+ **  Sixteen-column grid active
+ **  ----------------------------------------------------------------------------------------------------------------------
+ **  Margin   | #  1     2     3     4     5     6     7     8     9     10    11    12    13    14    15    16  |   Margin
+ **  5.55555% | %  6.25  12.5  18.75 25.0  31.25 37.5  43.75 50.0  56.25 62.5  68.75 75.0  81.25 87.5  93.75 100 | 5.55555%
+ **	
+ ** */
+/* @media screen and (min-width: 1872px) */
+@media screen and (min-width: 117em) {
+  header, #twoway {
+    margin: 0 5.556%; }
 
   #twoway .wrapper {
     width: 25%; }
