@@ -25,10 +25,20 @@ body
   +image("shared/bg.jpg", repeat)
 
 header
-  padding: 1em 0
-  text-align: center
-  +box-shadow(0, 1px, 2px, transparentize($black, 0.9))
-  +linear-gradient($white, $blue-1)
+  .wrapper
+    padding: 1em 0
+    text-align: center
+    +box-shadow(0, 1px, 2px, transparentize($black, 0.75))
+    +linear-gradient($white, $blue-1)
   
-  h1
-    margin: 0
+    h1
+      margin: 0
+  
+  nav
+    background: transparentize($black, 0.5)
+    
+    ul
+      li
+        a
+          display: block
+          text-align: center
