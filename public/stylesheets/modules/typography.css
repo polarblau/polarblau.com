@@ -1,23 +1,24 @@
 /*
-Syntax error: Undefined mixin 'image'.
-        on line 5 of /Users/flopster/projects/polarblau.com/stylesheets/modules/typography.sass, in `image'
-        from line 5 of /Users/flopster/projects/polarblau.com/stylesheets/modules/typography.sass
+Syntax error: Undefined variable: "$purple-2".
+        on line 53 of /Users/flopster/projects/polarblau.com/stylesheets/modules/typography.sass
 
-1: body
-2:   /* 16px / 24px
-3:   font-size: 1em
-4:   line-height: 1.5em
-5:   +image("shared/bg.jpg", repeat)
-6: 
-7: 
-8: .small
-9:   /* 13px / 18px
-10:   font-size: 0.8125em
+48:   font-size: 6.875em
+49:   line-height: 1.0909090909090908em
+50: 
+51: // Links
+52: a
+53:   color: $purple-2
+54:   +transition(color)
+55:   text-decoration: none
+56:   &:visited
+57:     color: $purple-2
+58:   &:hover, &:active, &.active, &:hover:visited
 
 Backtrace:
-/Users/flopster/projects/polarblau.com/stylesheets/modules/typography.sass:5:in `image'
-/Users/flopster/projects/polarblau.com/stylesheets/modules/typography.sass:5
-/Users/flopster/.rvm/gems/ruby-1.9.2-p290@polarblau.com/gems/sass-3.1.10/lib/sass/tree/visitors/perform.rb:168:in `visit_mixin'
+/Users/flopster/projects/polarblau.com/stylesheets/modules/typography.sass:53
+/Users/flopster/.rvm/gems/ruby-1.9.2-p290@polarblau.com/gems/sass-3.1.10/lib/sass/script/variable.rb:50:in `_perform'
+/Users/flopster/.rvm/gems/ruby-1.9.2-p290@polarblau.com/gems/sass-3.1.10/lib/sass/script/node.rb:40:in `perform'
+/Users/flopster/.rvm/gems/ruby-1.9.2-p290@polarblau.com/gems/sass-3.1.10/lib/sass/tree/visitors/perform.rb:214:in `visit_prop'
 /Users/flopster/.rvm/gems/ruby-1.9.2-p290@polarblau.com/gems/sass-3.1.10/lib/sass/tree/visitors/base.rb:37:in `visit'
 /Users/flopster/.rvm/gems/ruby-1.9.2-p290@polarblau.com/gems/sass-3.1.10/lib/sass/tree/visitors/perform.rb:18:in `visit'
 /Users/flopster/.rvm/gems/ruby-1.9.2-p290@polarblau.com/gems/sass-3.1.10/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
@@ -67,4 +68,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'image'.\A         on line 5 of /Users/flopster/projects/polarblau.com/stylesheets/modules/typography.sass, in `image'\A         from line 5 of /Users/flopster/projects/polarblau.com/stylesheets/modules/typography.sass\A \A 1: body\A 2:   /* 16px / 24px\A 3:   font-size: 1em\A 4:   line-height: 1.5em\A 5:   +image(\"shared/bg.jpg\", repeat)\A 6: \A 7: \A 8: .small\A 9:   /* 13px / 18px\A 10:   font-size: 0.8125em"; }
+  content: "Syntax error: Undefined variable: \"$purple-2\".\A         on line 53 of /Users/flopster/projects/polarblau.com/stylesheets/modules/typography.sass\A \A 48:   font-size: 6.875em\A 49:   line-height: 1.0909090909090908em\A 50: \A 51: // Links\A 52: a\A 53:   color: $purple-2\A 54:   +transition(color)\A 55:   text-decoration: none\A 56:   &:visited\A 57:     color: $purple-2\A 58:   &:hover, &:active, &.active, &:hover:visited"; }

@@ -2,36 +2,84 @@ body
   /* 16px / 24px
   font-size: 1em
   line-height: 1.5em
-  +image("shared/bg.jpg", repeat)
+  
+  
+// custom fonts
+=custom-serif($font-weight: 300, $font-style: normal)
+  font-family: adelle-1, adelle-2, serif
+  font-weight: $font-weight // 100, 300, 400, 600, 700
+  font-style: $font-style   // normal, italic
 
+=custom-sans($font-weight: 400, $font-style: normal)
+  font-family: museo-sans-1, museo-sans-2, sans-serif
+  font-weight: $font-weight // 100, 300, 500, 700, 900
+  font-style: $font-style   // normal, italic
+  
 
-.small
+// size mixins
+=small
   /* 13px / 18px
   font-size: 0.8125em
   line-height: 1.3846153846153846em
 
-.normal, h3
+=normal
   /* 16px / 24px
   font-size: 1em
   line-height: 1.5em
   /* 24
 
-.large, h2, h1
+=large
   /* 26 / 36px
   font-size: 1.625em
   line-height: 1.3846153846153846em
 
-.huge
+=huge
   /* 42px / 48px
   font-size: 2.625em
   line-height: 1.1428571428571428em
 
-.massive
+=massive
   /* 68px / 72px
   font-size: 4.25em
   line-height: 1.0588235294117647em
 
-.gigantic
+=gigantic
   /* 110px / 120px
   font-size: 6.875em
   line-height: 1.0909090909090908em
+
+// Links
+a
+  color: $purple-2
+  +transition(color)
+  text-decoration: none
+  &:visited
+    color: $purple-2
+  &:hover, &:active, &.active, &:hover:visited
+    color: $purple-1
+  &:focus
+    outline: thin dotted
+  &:hover, &:active
+    outline: 0
+
+// Headlines
+h1, h2, h3, h4, h5, h6
+  +custom-sans
+  
+h1
+  margin: 0.9230769230769231em 0 1.3846153846153846em
+  +large
+
+h2
+  margin: 0.9230769230769231em 0 1.3846153846153846em
+  font-weight: normal
+  +large
+
+h3
+  font-variant: small-caps
+  text-transform: lowercase
+  +custom-sans(700)
+    
+p
+  +custom-serif
+  color: $gray-1

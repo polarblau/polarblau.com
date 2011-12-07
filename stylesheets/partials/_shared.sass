@@ -1,44 +1,57 @@
-// General styles
-
-h1
-  margin: 0.9230769230769231em 0 1.3846153846153846em
-
-h2
-  margin: 0.9230769230769231em 0 1.3846153846153846em
-  font-weight: normal
-
-h3
-  margin: 1.5em 0 1.5em
-  
-
 // Elastic gutters
 .wrapper
   padding: 0 0.75em
-  -webkit-box-sizing: border-box
-  -moz-box-sizing: border-box
-  -o-box-sizing: border-box
-  box-sizing: border-box
+  +box-sizing
 
 // ---
 
 body
-  +image("shared/bg.jpg", repeat)
+  background: $gray-3
 
-header
-  .wrapper
-    padding: 1em 0
-    text-align: center
-    +box-shadow(0, 1px, 2px, transparentize($black, 0.75))
-    +linear-gradient($white, $blue-1)
+  header
+    .wrapper
+      text-align: center
+      border-bottom: 1px solid $gray-2
+      
+      h1
+        img
+          margin-right: -10px
+          width: 100px
   
-    h1
-      margin: 0
+    nav
+      text-align: center
+      padding: 0.5em 0
+      display: none
+      ul
+        li
+          display: inline
+          padding: 0 1em
+          a
+            +custom-sans
+            color: $gray-4
+            font-variant: small-caps
+            font-size: 1.1em
+            +text-inset-negative(white)
+            &:visited
+              color: $gray-4
+
+  #main
+    .box
+      background: $gray-3
+      border: 1px solid $gray-2
+    .box
+      padding-top: 0.5em
+      padding-bottom: 0.5em
+      h2
+        margin: 0
+    .invert
+      background: $blue-2
+      color: $blue-1
   
-  nav
-    background: transparentize($black, 0.5)
-    
-    ul
+  #work
+    ul.client-logos
+      list-style: none   
       li
-        a
-          display: block
-          text-align: center
+        text-align: center
+        display: block
+        float: left

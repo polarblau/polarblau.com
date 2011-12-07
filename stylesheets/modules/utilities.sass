@@ -86,7 +86,6 @@
 =linear-gradient($from, $to)
   background: -moz-linear-gradient(0% 100% 90deg, $to, $from) no-repeat
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to)) no-repeat
-  // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from', endColorstr='$to')
   filter: "progid:DXImageTransform.Microsoft.Gradient (GradientType=0, StartColorStr='$from', EndColorStr='$to')"
 
 // Opacity
@@ -114,6 +113,26 @@
     height: 50px
     +border-radius(3px)
 
+=box-sizing($sizing: border-box)
+  -webkit-box-sizing: $sizing
+  -moz-box-sizing: $sizing
+  -o-box-sizing: $sizing
+  box-sizing: $sizing
+
+// Transition
+=transition($property, $duration: 500ms, $easing: ease-in)
+  transition-property: $property
+  transition-duration: $duration
+  transition-timing-function: $easing
+  -webkit-transition-property: $property
+  -webkit-transition-duration: $duration
+  -webkit-transition-timing-function: $easing
+  -moz-transition-property: $property
+  -moz-transition-duration: $duration
+  -moz-transition-timing-function: $easing
+  -o-transition-property: $property
+  -o-transition-duration: $duration
+  -o-transition-timing-function: $easing
 
 // Clearfix
 =clearfix
