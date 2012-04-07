@@ -1,25 +1,4 @@
 module Jekyll
-  require 'haml'
-  class HamlConverter < Converter
-    safe true
-    priority :low
-
-    def matches(ext)
-      ext =~ /haml/i
-    end
-
-    def output_ext(ext)
-      ".html"
-    end
-
-    def convert(content)
-      engine = Haml::Engine.new(content)
-      engine.render
-    end
-  end
-end
-
-module Jekyll
   # Compiled Sass into CSS. You must specify an empty YAML front matter
   # at the beginning of the file.
   # sass|sccs -> .css
@@ -45,7 +24,10 @@ module Jekyll
     def convert(content)
       setup
       begin
-        Sass::Engine.new(content, :style => :compressed, :syntax => syntax(content)).render
+        Sass::Engine.new(content,
+                         :style => :compressed,
+                         :syntax => syntax(content),
+                         :load_paths => ["./stylesheets/"]).render
       rescue => e
         puts "Sass Exception (#{e.sass_line}): #{e.message}"
       end
@@ -58,3 +40,4 @@ module Jekyll
     end
   end
 end
+
