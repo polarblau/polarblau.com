@@ -1,0 +1,44 @@
+//  Simple fluid media
+figure
+  position: relative
+
+figure img,
+figure object,
+figure embed,
+figure video
+  max-width: 100%
+  display: block
+
+img
+  border: 0
+  -ms-interpolation-mode: bicubic
+
+// gutters
+.wrapper
+  padding: 0 0.75em
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+// media query helper
+=respond-to($media)
+  @if $media == small
+    @media screen and (min-width: 160px)
+      @content
+  @else if $media == medium
+    @media screen and (min-width: 480px)
+      @content
+  @else if $media == large
+    @media screen and (min-width: 600px)
+      @content
+
+// general page sizes
+body
+  #container
+    +respond-to(small)
+      padding: 0 0.5em
+
+    +respond-to(medium)
+      width: 600px
+      padding: 0
+      margin: 0 auto
