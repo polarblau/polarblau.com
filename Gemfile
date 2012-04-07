@@ -1,7 +1,5 @@
 source :rubygems
 
-gem 'serve', '1.5.1'
+gem 'jekyll'
 gem 'haml'
 gem 'sass'
-gem 'guard-coffeescript'
-gem 'manifesto'
