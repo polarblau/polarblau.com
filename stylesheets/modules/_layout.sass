@@ -29,5 +29,15 @@ img
     @media screen and (min-width: 480px)
       @content
   @else if $media == large
-    @media screen and (min-width: 1024px)
+    @media screen and (min-width: 600px)
       @content
+
+// general page sizes
+body
+  #container
+    +respond-to(small)
+      padding: 0 0.5em
+    +respond-to(medium)
+      width: 600px
+      padding: 0
+      margin: 0 auto
