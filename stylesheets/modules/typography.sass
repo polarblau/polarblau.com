@@ -1,20 +1,35 @@
+// custom fonts
+=custom-serif($weight: light)
+  font-family: 'Bitter', serif
+  @if $weight == bold
+    font-weight: 700
+  @else
+    font-weight: 400
+
+=custom-serif-italic
+  +custom-serif(light)
+  font-style: italic
+
+=custom-sans
+  font-family: 'Varela Round', sans-serif
+
+=custom-mono
+  font-family: 'PT Mono', sans-serif
+
 body
   /* 16px / 24px
   font-size: 1em
   line-height: 1.5em
-  
-  
-// custom fonts
-=custom-serif($font-weight: 300, $font-style: normal)
-  font-family: adelle-1, adelle-2, serif
-  font-weight: $font-weight // 100, 300, 400, 600, 700
-  font-style: $font-style   // normal, italic
+  +custom-sans
 
-=custom-sans($font-weight: 400, $font-style: normal)
-  font-family: museo-sans-1, museo-sans-2, sans-serif
-  font-weight: $font-weight // 100, 300, 500, 700, 900
-  font-style: $font-style   // normal, italic
-  
+  +respond-to(small)
+    font-size: 1em
+
+  +respond-to(medium)
+    font-size: 1.1em
+
+  +respond-to(large)
+    font-size: 1.2em
 
 // size mixins
 =small
@@ -51,21 +66,24 @@ body
 // Links
 a
   color: $purple-2
-  +transition(color)
   text-decoration: none
+
   &:visited
     color: $purple-2
+
   &:hover, &:active, &.active, &:hover:visited
     color: $purple-1
+
   &:focus
     outline: thin dotted
+
   &:hover, &:active
     outline: 0
 
 // Headlines
 h1, h2, h3, h4, h5, h6
-  +custom-sans
-  
+  +custom-serif
+
 h1
   margin: 0.9230769230769231em 0 1.3846153846153846em
   +large
@@ -78,8 +96,11 @@ h2
 h3
   font-variant: small-caps
   text-transform: lowercase
-  +custom-sans(700)
-    
+  +custom-sans
+
 p
   +custom-serif
   color: $gray-1
+
+code
+  +custom-mono
