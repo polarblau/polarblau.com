@@ -36,7 +36,10 @@ GEM
       syntax (>= 1.0.0)
     multi_json (1.0.3)
     posix-spawn (0.3.6)
+    rubypants (0.2.0)
     syntax (1.0.0)
+    typogruby (1.0.15)
+      rubypants
 
 PLATFORMS
   ruby
@@ -47,3 +50,4 @@ DEPENDENCIES
   haml
   jekyll
   sass!
+  typogruby

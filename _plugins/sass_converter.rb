@@ -25,7 +25,7 @@ module Jekyll
       setup
       begin
         Sass::Engine.new(content,
-                         :style => :compressed,
+                         #:style => :compressed,
                          :syntax => syntax(content),
                          :load_paths => ["./stylesheets/"]).render
       rescue => e

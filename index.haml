@@ -1,15 +1,42 @@
 ---
 layout: default
+body_class: index
 title: Polarblau
 ---
 
-%section
-  %h2 This is a bigger headline
-  %p Through&ndash;out the years I had the pleasure.
-  %h3 Work
-  %ul
-    %li List item 1
-    %li A list item with a longer content here
-  %h4 Another headline
-  %p Through&ndash;out the years I had the pleasure.
+%article
+  %header
+    %h2
+      I am solving problems with software.
+
+  %section.about
+    %p
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices lacus blandit lectus bibendum eu lacinia mauris porta. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc facilisis semper justo, et mollis purus fermentum in. Nulla tellus enim, placerat eu auctor in, luctus quis purus. In quis tempus enim. Sed eu lectus nec tortor ultricies molestie at id ante. Vivamus quis euismod lacus. Etiam facilisis odio nec metus laoreet quis egestas est ultrices.
+    %pre
+      %code
+        :preserve
+          # Output "I love Ruby"
+          say = "I love Ruby"
+          puts say
+
+          # Output "I *LOVE* RUBY"
+          say['love'] = "*love*"
+          puts say.upcase
+
+          # Output "I *love* Ruby"
+          # five times
+          5.times { puts say }
+
+  %section.clients
+    %h3 Clients
+    %p
+
+    %figure
+      %ul
+        %li
+          %img()
+
+  %section.colophon
+
+
 

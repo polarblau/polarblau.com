@@ -1,15 +1,20 @@
-// header
-#header
-  text-align: center
-  border-bottom: 1px solid $gray-2
+body.index
+  header
+    padding-bottom: 2em
+  background: $gray-3
+  // blog?
+    background: $white url('/images/layout/shared/bg.jpg')
+    #container
+      background: $white
+      padding: 0 10em
 
-  h1
-    margin: 1em 0 0.5em 0
+  article
+    padding: 0 0.75em
+    border-top: 1px solid $gray-3
 
-  +respond-to(tablet-lite)
-    h1
-      margin: 1.5em 1em 0
-
-  +respond-to(tablet-portrait)
-    h1
-      margin: 2.5em 0 1em 0
+    header
+      h2
+        color: $purple-2
+        font-size: 2em
+        text-align: center
+        +custom-display(thin)

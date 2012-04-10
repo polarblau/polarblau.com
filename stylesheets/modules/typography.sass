@@ -1,35 +1,81 @@
+@font-face
+  font-family: 'Junction'
+  src: url('/fonts/Junction-webfont.eot?') format('eot'), url('/fonts/Junction-webfont.woff') format('woff'), url('/fonts/Junction-webfont.ttf') format('truetype')
+
 // custom fonts
-=custom-serif($weight: light)
-  font-family: 'Bitter', serif
-  @if $weight == bold
-    font-weight: 700
-  @else
+  =custom-serif($weight: light)
+    font-family: 'Bitter', serif
+    @if $weight == bold
+      font-weight: 700
+    @else
+      font-weight: 400
+//
+  =custom-serif-italic
+    +custom-serif(light)
+    font-style: italic
+//
+  =custom-sans
+    font-family: 'Junction'
+//
+  =custom-sans-lato($weight: normal)
+    font-family: 'Lato', sans-serif
+    @if $weight == book
+      font-weight: 300
+    @else if $weight == normal
+      font-weight: 400
+    @else if $weight == bold
+      font-weight: 700
+    @else if $weight == ultra-bold
+      font-weight: 900
+//
+  =custom-sans-italic($weight: normal)
+    +custom-sans($weight)
+    font-style: italic
+
+=custom-body($weight: regular, $style: normal)
+  font-family: 'pt-sans', 'Helvetica', sans-serif
+  @if $weight == regular
     font-weight: 400
+  @else if $weight == bold
+    font-weight: 700
+  font-style: $style
 
-=custom-serif-italic
-  +custom-serif(light)
-  font-style: italic
+=custom-display($weight: black, $style: italic)
+  font-family: 'ff-enzo-web', 'Helvetica', sans-serif
+  @if $weight == thin
+    font-weight: 100
+  @else if $weight == light
+    font-weight: 300
+  @else if $weight == bold
+    font-weight: 700
+  @else if $weight == black
+    font-weight: 900
+  font-style: $style
 
-=custom-sans
-  font-family: 'Varela Round', sans-serif
+=custom-mono($weight: regular, $style: normal)
+  font-family: 'ubuntu-mono', 'Monaco', mono-space
+  @if $weight == regular
+    font-weight: 400
+  @else if $weight == bold
+    font-weight: 700
+  font-style: $style
 
-=custom-mono
-  font-family: 'PT Mono', sans-serif
 
 body
   /* 16px / 24px
   font-size: 1em
   line-height: 1.5em
-  +custom-sans
+  color: $gray-1
+  +custom-body
 
   +respond-to(small)
-    font-size: 1em
+    font-size: 0.9em
 
   +respond-to(medium)
-    font-size: 1.1em
+    font-size: 1em
 
   +respond-to(large)
-    font-size: 1.2em
+    font-size: 1.1em
 
 // size mixins
 =small
@@ -82,7 +128,7 @@ a
 
 // Headlines
 h1, h2, h3, h4, h5, h6
-  +custom-serif
+  +custom-display
 
 h1
   margin: 0.9230769230769231em 0 1.3846153846153846em
@@ -90,17 +136,18 @@ h1
 
 h2
   margin: 0.9230769230769231em 0 1.3846153846153846em
-  font-weight: normal
   +large
 
 h3
   font-variant: small-caps
   text-transform: lowercase
-  +custom-sans
 
 p
-  +custom-serif
-  color: $gray-1
+  color: #666 //$gray-1
 
 code
   +custom-mono
+
+pre
+  background: $gray-2
+  padding: 1em
