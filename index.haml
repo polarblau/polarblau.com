@@ -5,38 +5,39 @@ title: Polarblau
 ---
 
 %article
-  %header
-    %h2
-      I am solving problems with software.
 
   %section.about
-    %p
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices lacus blandit lectus bibendum eu lacinia mauris porta. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc facilisis semper justo, et mollis purus fermentum in. Nulla tellus enim, placerat eu auctor in, luctus quis purus. In quis tempus enim. Sed eu lectus nec tortor ultricies molestie at id ante. Vivamus quis euismod lacus. Etiam facilisis odio nec metus laoreet quis egestas est ultrices.
-    %pre
-      %code
-        :preserve
-          # Output "I love Ruby"
-          say = "I love Ruby"
-          puts say
-
-          # Output "I *LOVE* RUBY"
-          say['love'] = "*love*"
-          puts say.upcase
-
-          # Output "I *love* Ruby"
-          # five times
-          5.times { puts say }
+    %h3 Polarblau
+    .description
+      %p
+        Polarblau is a tiny software shop run by Florian Plank.
+        He has been helping a wide variety of clients from
+        global heavy industry to small local start&ndash;up
+        to build better software.
 
   %section.clients
     %h3 Clients
-    %p
-
-    %figure
-      %ul
-        %li
-          %img()
+    .description
+      %p
+        Polarblau has served a wide variety of clients
+        as contractor and subcontractor through-out the years.
+        Recent examples include
+      %figure
+        %ul
+          - %w(fusion nokia fjord ikea).each do |client|
+            %li
+              %span
+                %img(src="/images/content/client_logos/#{client}.png" alt="Client logo: #{client.upcase}")
 
   %section.colophon
+    %h3 Contact
+    .description
+      %p
+        Polarblau has served a wide variety of clients
+        %a() Foo
+        as contractor and subcontractor through-out the years.
+        Recent examples include
+
 
 
 

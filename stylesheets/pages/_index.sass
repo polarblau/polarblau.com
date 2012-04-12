@@ -1,20 +1,76 @@
 body.index
-  header
-    padding-bottom: 2em
-  background: $gray-3
-  // blog?
-    background: $white url('/images/layout/shared/bg.jpg')
-    #container
-      background: $white
-      padding: 0 10em
-
   article
     padding: 0 0.75em
-    border-top: 1px solid $gray-3
 
-    header
-      h2
+    section
+      padding-top: 2em
+
+      h3
         color: $purple-2
-        font-size: 2em
-        text-align: center
-        +custom-display(thin)
+        margin: 0
+
+      .description
+        p
+          margin-top: 0
+
+
+      &.clients
+        ul
+          clear: both
+          list-style: none
+          padding: 0
+          margin: 1.5em 0 0
+          background: $blue-1
+          border: 1px solid $gray-3
+          +clearfix
+
+          li
+            float: left
+            width: 50%
+            text-align: center
+
+            span
+              display: block
+              margin: 0 30%
+
+              img
+                display: inline
+
+  +respond-to(smartphone-portrait)
+    article
+      padding: 0 10%
+
+  +respond-to(smartphone-landscape)
+    article
+      padding: 0 1em
+
+      section
+        &.clients
+          ul
+            li
+              width: 25%
+
+              span
+                margin: 0 15%
+
+  +respond-to(tablet-lite)
+    article
+      padding: 0 0.5em
+
+      section
+        clear: both
+
+        h3
+          width: 25%
+          float: left
+
+        .description
+          width: 75%
+          float: right
+
+
+        &.about
+          margin-bottom: 2em
+
+
+

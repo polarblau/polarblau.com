@@ -1,37 +1,3 @@
-@font-face
-  font-family: 'Junction'
-  src: url('/fonts/Junction-webfont.eot?') format('eot'), url('/fonts/Junction-webfont.woff') format('woff'), url('/fonts/Junction-webfont.ttf') format('truetype')
-
-// custom fonts
-  =custom-serif($weight: light)
-    font-family: 'Bitter', serif
-    @if $weight == bold
-      font-weight: 700
-    @else
-      font-weight: 400
-//
-  =custom-serif-italic
-    +custom-serif(light)
-    font-style: italic
-//
-  =custom-sans
-    font-family: 'Junction'
-//
-  =custom-sans-lato($weight: normal)
-    font-family: 'Lato', sans-serif
-    @if $weight == book
-      font-weight: 300
-    @else if $weight == normal
-      font-weight: 400
-    @else if $weight == bold
-      font-weight: 700
-    @else if $weight == ultra-bold
-      font-weight: 900
-//
-  =custom-sans-italic($weight: normal)
-    +custom-sans($weight)
-    font-style: italic
-
 =custom-body($weight: regular, $style: normal)
   font-family: 'pt-sans', 'Helvetica', sans-serif
   @if $weight == regular
@@ -68,13 +34,7 @@ body
   color: $gray-1
   +custom-body
 
-  +respond-to(small)
-    font-size: 0.9em
-
-  +respond-to(medium)
-    font-size: 1em
-
-  +respond-to(large)
+  +respond-to(tablet-lite)
     font-size: 1.1em
 
 // size mixins
@@ -111,7 +71,8 @@ body
 
 // Links
 a
-  color: $purple-2
+  color: $blue-3
+  border-bottom: 1px dotted $blue-3
   text-decoration: none
 
   &:visited
@@ -128,7 +89,7 @@ a
 
 // Headlines
 h1, h2, h3, h4, h5, h6
-  +custom-display
+  +custom-display(bold, normal)
 
 h1
   margin: 0.9230769230769231em 0 1.3846153846153846em
@@ -143,7 +104,7 @@ h3
   text-transform: lowercase
 
 p
-  color: #666 //$gray-1
+  color: $gray-5
 
 code
   +custom-mono
