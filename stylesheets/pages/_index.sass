@@ -3,25 +3,40 @@ body.index
     padding: 0 0.75em
 
     section
-      padding-top: 2em
+      padding-top: 3em
 
       h3
         color: $purple-2
         margin: 0
 
+      h4
+        +custom-display(light)
+        color: $purple-2
+
       .description
         p
           margin-top: 0
 
+      &.intro
+        padding-top: 0
+
+        h2
+          +custom-display(thin)
+          text-align: center
+          color: $purple-2
+
+      &.about
+        padding-top: 0
+        text-align: center
+        +custom-display(light)
 
       &.clients
         ul
           clear: both
           list-style: none
-          padding: 0
-          margin: 1.5em 0 0
-          background: $blue-1
-          border: 1px solid $gray-3
+          padding: 1em 0
+          margin: 1em 0 0
+          border-top: 1px solid $blue-1
           +clearfix
 
           li
@@ -31,20 +46,71 @@ body.index
 
             span
               display: block
-              margin: 0 30%
+              margin: 0 15%
 
               img
                 display: inline
+
+      &.projects
+        ul
+          list-style: none
+          padding: 0
+
+          li
+            margin-top: 2em
+            h4
+              margin-bottom: 0.5em
+            img
+              display: none
+            p
+              margin-top: 0
+
+      &.contact
+        padding-top: 1em
+
+        ul
+          list-style: none
+          +clearfix
+          border: 1px solid $blue-1
+          padding: 1em 0 0.5em 0
+
+          li
+            width: 20%
+            float: left
+            font-size: 0.8em
+            text-align: center
+
+            a
+              display: block
+              position: relative
+              border: none
+              margin: 0 1em
+
+              img
+                width: 100%
+
+              span
+                display: none
 
   +respond-to(smartphone-portrait)
     article
       padding: 0 10%
 
+      section
+        &.clients
+          ul
+            li
+              span
+                margin: 0 20%
+
+
   +respond-to(smartphone-landscape)
     article
-      padding: 0 1em
-
       section
+
+        &.about
+          margin-bottom: 3em
+
         &.clients
           ul
             li
@@ -52,6 +118,40 @@ body.index
 
               span
                 margin: 0 15%
+
+        &.projects
+          ul
+            li
+              position: relative
+              clear: both
+              padding-left: 25%
+
+              img
+                display: block
+                position: absolute
+                left: -2%
+                top: -1em
+
+
+        &.contact
+          ul
+            li
+              a
+                img
+                  width: auto
+                  border-bottom: 1px solid $gray-2
+
+                span
+                  display: block
+                  color: $purple-3
+
+                &:hover
+                  img
+                    border-color: $blue-3
+
+                  span
+                    color: $blue-3
+
 
   +respond-to(tablet-lite)
     article
@@ -61,16 +161,17 @@ body.index
         clear: both
 
         h3
-          width: 25%
+          width: 20%
           float: left
+          line-height: 1.1em
 
         .description
           width: 75%
           float: right
 
-
         &.about
           margin-bottom: 2em
 
-
-
+        &.projects
+          ul
+            padding: 3em 0 0 0

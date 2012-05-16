@@ -6,37 +6,101 @@ title: Polarblau
 
 %article
 
+  %section.intro
+    %h2
+      Full stack software solutions for the open web
+
   %section.about
-    %h3 Polarblau
+    %p
+      Polarblau is a tiny software shop run by me, Florian.
+      %br
+      I am helping companies of all sizes &mdash; from start&ndash;ups
+      to global cooperations &mdash; to build better software.
+
+  %section.philosophy
+    %h3 Philosophy
     .description
       %p
-        Polarblau is a tiny software shop run by Florian Plank.
-        He has been helping a wide variety of clients from
-        global heavy industry to small local start&ndash;up
-        to build better software.
+        Creating software poses a fascinating and unique challenge every time.
+        Excited developers and designers will create exciting products.
+        &mdash; Let's not take the fun out of it by adding extra weight through
+        clunky processes, lenghty meetings or tons of needless paperwork.
+      %p
+        I believe in small teams, direct responsibilities and transparency all the way.
+
+      %h4
+        Open Source
+      %p
+        The core principles of Open Source go a long way and I try to invest
+        as much time as possible into my own and other's Open Source projects.
+
 
   %section.clients
     %h3 Clients
     .description
       %p
-        Polarblau has served a wide variety of clients
-        as contractor and subcontractor through-out the years.
-        Recent examples include
-      %figure
-        %ul
-          - %w(fusion nokia fjord ikea).each do |client|
-            %li
-              %span
-                %img(src="/images/content/client_logos/#{client}.png" alt="Client logo: #{client.upcase}")
+        Polarblau has served a variety of clients
+        as contractor and subcontractor.
+        Recent examples include:
+    %figure
+      %ul
+        - %w(fusion nokia fjord ikea typolar hookie citat bar).each do |client|
+          %li
+            %span
+              %img(src="/images/content/client_logos/#{client}.png" alt="Client logo: #{client.upcase}")
 
-  %section.colophon
-    %h3 Contact
+  %section.projects
+    %h3
+      Projects
     .description
       %p
-        Polarblau has served a wide variety of clients
-        %a() Foo
-        as contractor and subcontractor through-out the years.
-        Recent examples include
+        Day&ndash;to&ndash;day work aside, Polarblau actively develops a few products &mdash; both commercially and as open source.
+    %ul
+      %li
+        %h4
+          %a(href="http://pleaserevise.com" title="Visit Please Revise!")
+            Please Revise!
+        %img(src="/images/content/projects/please_revise.png" alt="Logo: Please Revise!")
+        %p
+          PR! helps design teams and their clients to better communicate over visual work.
+          It enables the users to track changes and stay in the loop on updates.
+          %br
+          PR! is currently in close
+          %em BETA
+          \.
+      %li
+        %h4
+          %a(href="http://heypayme.com" title="Visit Hey pay me!")
+            Hey pay me!
+        %img(src="/images/content/projects/hey_pay_me.png" alt="Logo: Hey, Pay Me!")
+        %p
+          An alternative to existing and often bloated invoicing and time tracking solutions for
+          freelancers and small companies. It sports a simple and intuitive interface, the possibility
+          to create and edit themes as well as PDF generation.
+          %br
+          Hey pay me! will hopefully go online later this year.
+      %li
+        %h4
+          %a(href="http://github.com/polarblau/capycorder" title="Check the project out on Github")
+            Capycorder
+        %img(src="/images/content/projects/capycorder.png" alt="Logo: Capycorder")
+        %p
+          A free Chrome extension, allowing it to record user interactions and generate corresponding
+          Capybara specs.
+
+  %section.contact
+    %ul
+      - contacts = {'Github'        => 'http://github.com/polarblau',
+                    'StackOverflow' =>'http://stackoverflow.com/users/564721/polarblau',
+                    'Twitter'       => 'https://twitter.com/polarblau',
+                    'Speakerdeck'   => 'http://speakerdeck.com/u/polarblau',
+                    'LinkedIn'      => 'http://www.linkedin.com/in/florianplank'}
+      - contacts.each do |name, link|
+        %li
+          %a(href=link title="Polarblau on #{name}")
+            %img(src="/images/content/contact/#{name.downcase}.png" alt="Logo: #{name}")
+            %span= name
+
 
 
 

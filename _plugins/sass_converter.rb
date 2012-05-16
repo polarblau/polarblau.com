@@ -6,6 +6,7 @@ module Jekyll
     def setup
       return if @setup
       require 'sass'
+      require './stylesheets/bourbon/lib/bourbon.rb'
       @setup = true
     rescue LoadError
       STDERR.puts 'You are missing a library required for sass. Please run:'
