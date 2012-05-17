@@ -1,4 +1,15 @@
 body.index
+
+  .canvas-container
+    position: absolute !important
+    top: 0
+    left: 0
+    z-index: 1
+
+  #container
+    position: relative
+    z-index: 2000
+
   article
     padding: 0 0.75em
 
@@ -73,6 +84,7 @@ body.index
           +clearfix
           border: 1px solid $blue-1
           padding: 1em 0 0.5em 0
+          background: $white
 
           li
             width: 20%
@@ -135,6 +147,8 @@ body.index
 
         &.contact
           ul
+            padding: 1em 0
+
             li
               a
                 img

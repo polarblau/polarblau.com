@@ -1,4 +1,3 @@
 ---
 ---
 
-alert "hello from CS"
