@@ -14,7 +14,10 @@ $ ->
 
   canvas = new fabric.Canvas 'bg'
 
-  $window.on 'resize', -> draw(canvas)
+  lazyDraw  = _.debounce (-> draw(canvas)), 200
+  lazyClear = _.debounce (-> canvas.clear()), 200, true
+  $window.on 'resize', lazyDraw
+  $window.on 'resize', lazyClear
 
   init = ->$window.trigger 'resize'
   setTimeout init, 250
@@ -82,10 +85,8 @@ draw = (canvas) ->
 
 # Helpers
 
-rand = (range) ->
-  if typeof range is 'array'
-    Math.floor(Math.random() * range[1] - range[0]) + range[1]
-  else if typeof range is 'number'
-    Math.floor(Math.random() * range)
-
-
+rand = (start, end) ->
+  if end?
+    Math.round(Math.random() * (end - start)) + start
+  else
+    Math.round(Math.random() * start)
