@@ -1,0 +1,134 @@
+body.posts
+  article
+    padding: 0 0.5em
+
+    header
+      h2
+        margin-bottom: 0.5em
+
+    ul.posts
+      list-style: none
+      padding: 0
+      margin: 1em 0 3em
+      +clearfix
+
+      li
+        line-height: 2em
+
+        a
+          span.date
+            display: none
+
+
+  +respond-to(smartphone-portrait)
+    article
+      padding: 0 5%
+
+
+  +respond-to(smartphone-landscape)
+    article
+      header
+        text-align: center
+
+        h2
+          margin-bottom: inherit
+
+      ul.posts
+        margin: 2em 0 3em
+
+        li
+          clear: both
+          line-height: 2em
+
+          a
+            strong
+              float: left
+
+            span.date
+              display: block
+              float: right
+              color: $gray-4
+
+
+body.post
+
+  article
+    padding: 0 0.5em
+
+    header
+      margin-bottom: 3.5em
+
+      h2
+        margin-bottom: 0
+
+      p.date
+        color: $gray-4
+
+    footer
+      border-top: 5px solid $blue-3
+      margin-top: 3em
+      padding-top: 1em
+
+    img
+      width: 100%
+
+      &.inline
+        width: auto
+        vertical-align: middle
+    p
+      a
+        color: $gray-1
+
+        &:hover
+          color: $blue-3
+          border-color: $blue-3
+
+      code
+        background: $blue-1
+        color: $gray-4
+        white-space: pre
+        padding: 0.25em
+        +border-radius(0.2em)
+
+    pre
+      code
+        padding: 0
+        background: $gray-2
+
+    figure
+      figcaption
+        text-align: right
+        color: $gray-4
+        font-size: 0.8em
+        font-style: italic
+
+  +respond-to(smartphone-portrait)
+    article
+      padding: 0 5%
+
+      header
+        text-align: center
+
+        p.date
+          font-size: 0.8em
+
+      h3, h4, h5, h6
+        margin-top: 1.5em
+
+
+  +respond-to(tablet-lite)
+    article
+      header
+
+      ul
+        list-style-position: outside
+        padding-left: 0
+
+
+  +respond-to(tablet-landscape)
+    article
+      header
+        padding-top: 2.5em
+
+
+

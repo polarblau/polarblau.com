@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8' />
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
-    <title>Polarblau</title>
+    <title>{{ page.title }} | Polarblau</title>
     <meta content='Full stack software solutions for the open web' name='description' />
     <meta content='Polarblau' name='author' />
     <meta content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' name='viewport' />
@@ -13,9 +13,11 @@
         try { Typekit.load(); } catch(e) {};
       //]]>
     </script>
+    <script src='/javascripts/lib/highlight.pack.js'></script>
+    <script src='/javascripts/application.js'></script>
     <link href='/stylesheets/screen.css' rel='stylesheet' />
   </head>
-  <body class='{{ page.body_class }}'>
+  <body class='posts {{ page.body_class }}'>
     <div id='container'>
       <header id='header'>
         <h1>
@@ -25,7 +27,18 @@
         </h1>
       </header>
       <div id='main' role='main'>
-        {{ content }}
+        <article>
+          <header>
+            <h2>{{ page.title }}</h2>
+            <p class='date'>{{ page.date | date_to_string }}</p>
+          </header>
+          {{ content }}
+          <footer>
+            <nav>
+              <a href='/blog.html' title='Blog'>&laquo; All posts</a>
+            </nav>
+          </footer>
+        </article>
       </div>
       <footer id='footer'>
         <a href='http://creativecommons.org/licenses/by-nc/3.0/' rel='license'>

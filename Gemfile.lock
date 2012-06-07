@@ -36,12 +36,14 @@ GEM
       kramdown (~> 0.13)
       liquid (~> 2.3)
       maruku (~> 0.5)
+    jekyll-hasty (0.0.1)
     kramdown (0.13.5)
     liquid (2.3.0)
     maruku (0.6.0)
       syntax (>= 1.0.0)
     multi_json (1.0.3)
     posix-spawn (0.3.6)
+    rdiscount (1.6.8)
     rubypants (0.2.0)
     syntax (1.0.0)
     typogruby (1.0.15)
@@ -55,5 +57,7 @@ DEPENDENCIES
   coffee-script
   haml
   jekyll
+  jekyll-hasty
+  rdiscount
   sass!
   typogruby

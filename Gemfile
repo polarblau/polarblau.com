@@ -9,6 +9,8 @@ gem 'bourbon', :git => "https://github.com/thoughtbot/bourbon.git",
                :ref => "0ec0115c0e58fadb73f37067ced6d8d8ce26a371"
 
 gem 'jekyll'
+gem 'jekyll-hasty'
 gem 'haml'
 gem 'coffee-script'
 gem 'typogruby'
+gem 'rdiscount'

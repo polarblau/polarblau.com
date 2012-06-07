@@ -1,7 +1,7 @@
 ---
 layout: default
 body_class: index
-title: Polarblau
+title: Home
 ---
 
 %article
@@ -87,6 +87,19 @@ title: Polarblau
         %p
           A free Chrome extension, allowing it to record user interactions and generate corresponding
           Capybara specs.
+
+  %section.blog
+    %h3
+      Blog
+    .description
+      %p
+        Everynow and then I write over at my
+        %a(href="/blog.html" title="Visit the blog") notepad
+        \. The most recent article is called:
+        {% assign last_post = site.posts.first %}
+        %a{:href => "{{ last_post.url }}"}
+          %strong
+            "{{ last_post.title }}"
 
   %section.contact
     %ul

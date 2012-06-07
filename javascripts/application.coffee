@@ -1,3 +1,4 @@
 ---
 ---
-
+# Highlighting
+hljs.initHighlightingOnLoad()

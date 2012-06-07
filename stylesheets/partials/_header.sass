@@ -4,9 +4,38 @@
 
   h1
     margin: 0.5em 0 0.4em 0
-    img
-      width: 124px !important
-      height: 62px !important
+
+    a
+      border: none
+      background: transparent url(/images/content/header/logo.png) no-repeat
+      width: 124px
+      height: 62px
+      display: block
+      text-indent: -999em
+      margin: 0 auto
+
+  body.posts &
+
+    h1
+      a
+        background-image: url(/images/content/header/logo_circular.png)
+        width: 60px
+        height: 60px
+
+    nav
+      display: none
+      ul
+        padding: 0
+
+  +respond-to(smartphone-landscape)
+    border-bottom: 1px solid $blue-1
+
+    h1
+      display: block
+
+    nav
+      display: block
+
 
   +respond-to(tablet-lite)
     h1

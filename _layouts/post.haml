@@ -3,7 +3,7 @@
   %head
     %meta(charset="utf-8")
     %meta(content="IE=edge,chrome=1" http-equiv="X-UA-Compatible")
-    %title Polarblau
+    %title {{ page.title }} | Polarblau
 
     %meta(content="Full stack software solutions for the open web" name="description")
     %meta(content="Polarblau" name="author")
@@ -13,9 +13,12 @@
     :javascript
       try { Typekit.load(); } catch(e) {};
 
+    %script(src="/javascripts/lib/highlight.pack.js")
+    %script(src="/javascripts/application.js")
+
     %link(href="/stylesheets/screen.css" rel="stylesheet")
 
-  %body(class="{{ page.body_class }}")
+  %body(class="posts {{ page.body_class }}")
     #container
       %header#header
         %h1
@@ -23,9 +26,18 @@
             Polarblau
 
       #main(role="main")
-        {{ content }}
+        %article
+          %header
+            %h2 {{ page.title }}
+            %p.date {{ page.date | date_to_string }}
+          {{ content }}
+
+          %footer
+            %nav
+              %a(href="/blog.html" title="Blog") &laquo; All posts
 
       %footer#footer
         %a(rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/")
           %img(alt="Creative Commons License" src="/images/layout/footer/cc.png" width="66" height="20")
         Copy to learn.
+

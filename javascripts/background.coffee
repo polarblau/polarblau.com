@@ -12,17 +12,42 @@ $ ->
       height: $(document).height()
     .appendTo('body')
 
-  canvas = new fabric.Canvas 'bg'
+  canvas = new fabric.Canvas 'bg', selection: false
 
   lazyDraw  = _.debounce (-> draw(canvas)), 200
   lazyClear = _.debounce (-> canvas.clear()), 200, true
   $window.on 'resize', lazyDraw
   $window.on 'resize', lazyClear
 
-  init = ->$window.trigger 'resize'
+  init = -> $window.trigger 'resize'
   setTimeout init, 250
 
 # ---
+
+BGpolygon = fabric.util.createClass fabric.Polygon,
+
+  initialize: (line, boundaries, options) ->
+    @callSuper 'initialize', options
+
+  animateTop: (toLine) ->
+
+
+  _points: (line, boundaries) ->
+    [
+      { x: 0, y: line.a }
+      { x: boundaries.width, y: line.b }
+      { x: boundaries.width, y: boundaries.height }
+      { x: 0, y: boundaries.height }
+      { x: 0, y: line.a }
+    ]
+
+  _render: (ctx) ->
+    polygon = new fabric.Polygon points,
+      fill: '#49227a'
+      stroke: null
+      opacity: y[2]
+
+
 
 draw = (canvas) ->
 
@@ -49,12 +74,12 @@ draw = (canvas) ->
 
   lines.push [
     aboutBottom - 30
-    aboutTop + 160
+    aboutTop + 100
     0.05
   ]
   lines.push [
     aboutBottom + 10
-    aboutBottom - 60
+    aboutBottom - 30
     0.05
   ]
   lines.push [
@@ -80,6 +105,7 @@ draw = (canvas) ->
       fill: '#49227a'
       stroke: null
       opacity: y[2]
+      selectable: false
 
     canvas.add polygon
 

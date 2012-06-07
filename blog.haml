@@ -1,9 +1,13 @@
+---
+layout: false
+title: All posts
+---
 !!! 5
 %html.no-js(lang="en")
   %head
     %meta(charset="utf-8")
     %meta(content="IE=edge,chrome=1" http-equiv="X-UA-Compatible")
-    %title Polarblau
+    %title {{ page.title }} | Polarblau
 
     %meta(content="Full stack software solutions for the open web" name="description")
     %meta(content="Polarblau" name="author")
@@ -15,7 +19,7 @@
 
     %link(href="/stylesheets/screen.css" rel="stylesheet")
 
-  %body(class="{{ page.body_class }}")
+  %body(class="posts")
     #container
       %header#header
         %h1
@@ -23,9 +27,21 @@
             Polarblau
 
       #main(role="main")
-        {{ content }}
+        %article
+          %header
+            %h2 {{ page.title }}
+          %ul.posts
+            == {% for post in site.posts %}
+            %li
+              %a{:href => "{{ post.url }}"}
+                %strong
+                  == {{ post.title }}
+                %span.date
+                  == {{ post.date | date_to_string }}
+            == {% endfor %}
 
       %footer#footer
         %a(rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/")
           %img(alt="Creative Commons License" src="/images/layout/footer/cc.png" width="66" height="20")
         Copy to learn.
+
