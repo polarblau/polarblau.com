@@ -2,4 +2,4 @@ auto: true
 server: true
 pygments: true
 exclude: Gemfile*, Rakefile, config.rb
-markdown: rdiscount
+markdown: redcarpet
