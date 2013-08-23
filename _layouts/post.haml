@@ -14,7 +14,8 @@
       try { Typekit.load(); } catch(e) {};
 
     %script(src="/javascripts/lib/highlight.pack.js")
-    %script(src="/javascripts/application.js")
+    :javascript
+      hljs.initHighlightingOnLoad();
 
     %link(href="/stylesheets/screen.css" rel="stylesheet")
 
